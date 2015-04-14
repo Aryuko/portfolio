@@ -1,0 +1,16 @@
+{
+    "default": {
+        "target": "routes/home.php",
+        "alias": "\/"
+    },
+    "routes": [
+        {
+            "alias": "about",
+            "target": "alloy\/about.php"
+        },
+		{
+            "alias": "contact",
+            "target": "routes/contact.php"
+        }
+    ]
+}
