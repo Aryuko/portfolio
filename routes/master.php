@@ -1,5 +1,6 @@
 <?php
 require "alloy/view.php";
+include_once "db_connect.php";
 use Alloy\View;
 
 $master = View::Get("views/master.html");
@@ -25,6 +26,20 @@ switch($subview)
 		$master->SetAttribute("homebutton", "class", "");
 		$master->SetAttribute("projectsbutton", "class", "current");
 		$master->SetAttribute("contactbutton", "class", "");
+	
+		$template = View::Get("views/projecttemplate.html");
+
+		$stmt = $dbh->prepare("SELECT (project_name) FROM `project`");
+		$stmt->execute();
+		$res = $stmt->get_result();
+		$row = $res->fetch_assoc();
+		$template->SetData("project_name","Hej"/*$row['project_name']*/);
+		#echo $row['project_name'];
+	
+		$view->SetAppend("projects",true);		
+		$view->AddData("projects",$template);
+	
+		#$view->
 		break;
 	case "contact":
 		$view = View::Get("views/contact.html");

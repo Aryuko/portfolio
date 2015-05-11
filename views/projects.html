@@ -1,0 +1,169 @@
+<div id="projectscontent">
+	<div id="categories" name="categories" active>
+		<div class="category" name="Test1" active>Test1</div>
+		<div class="category" name="Test2" active>Test2</div>
+	</div>
+	<div id="projects" name="projects" active>
+		<!--div class="project card" name="Test1" active>
+			<img src="http://maban.co.uk/image/screenshot-party-tory-01.jpg">
+			<div class="projectname card" active>Project name 1</div>
+		</div>
+		<div class="project card" name="Test2" active>
+			<img src="http://media.al.com/live/photo/gulf-shores-website-screenshot-1c58200629ad5efb.jpg">
+			<div class="projectname card">Project name 2</div>
+		</div>
+		<div class="project card" name="Test1" active>
+			<div class="projectname card">Project name 3</div>
+		</div>
+		<div class="project card" name="Test2" active>
+			<div class="projectname card">Project name 4</div>
+		</div>
+		<div class="project card" name="Test1" active>
+			<div class="projectname card">Project name 5</div>
+		</div>
+		<div class="project card" name="Test2" active>
+			<div class="projectname card">Project name 6</div>
+		</div-->
+	</div>
+</div>
+<style>
+	#projectscontent
+	{
+		background-color: #F5F5F5;
+		box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1);
+		color: #8D9090;
+	}
+	#categories
+	{
+		position: relative;
+		z-index: 3;
+		top: -10px;
+		width: 100%;
+		min-height: 30px;
+		display: -webkit-flex;
+		display: flex;
+
+		justify-content: center;
+		align-content: center;
+		overflow: hidden;
+		background: #ecf0f1;
+		color: rgba(0,0,0,0.4);
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+
+		flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+	}
+	.category
+	{
+		position: relative;
+		cursor: pointer;
+		width: 160px;
+		height: 100%;
+		perspective: 800px;
+		font-size: 1.2em;
+		vertical-align: middle;
+		text-align: center;
+		line-height: 30px;
+		z-index: 0;
+		border: 0;
+		outline: 0;
+		transition: color 0.5s;
+	}
+	.currentcategory
+	{
+		color: #3498db;
+	}
+	.category:before
+	{
+		position: absolute;
+		content: "";
+		width: 0%;
+		left: 50%;
+		top: 50%;
+		height: 0%;
+		display: block;
+		border-radius: 100%;
+		background: rgba(0,0,0,0.05);
+		transition: opacity 0.3s, width 0.3s step-end, height 0.3s step-end;
+		transform: translate(-50%,-50%);
+		opacity: 0;
+		z-index: 2;
+		pointer-events: none;
+	}
+	.category:after
+	{
+		position: absolute;
+		content: attr(alt);
+		z-index: 3;
+		text-align: center;
+		width: 100%;
+		lefT: 0;
+		opacity: 0;
+		color: white;
+		transition: opacity 0.3s;
+	}
+	.category:hover:before
+	{
+		opacity: 1;
+		width: 170px;
+		height: 170px;
+		transition: all 0.2s;
+	}
+	/*
+	.category:hover:after
+	{
+		opacity: 1;
+	}
+	*/
+	#projects
+	{
+		
+	}
+	.project
+	{
+		position: relative;
+		display: inline-block;
+		width: 30%;
+		height: 180px;
+		margin: 1.25%;
+		overflow: hidden;
+	}
+	.project img
+	{
+		height: 100%;
+		z-index: 0;
+		/*width: 100%;*/
+	}
+	/* gradient on images
+	.project:after
+	{
+		color: white;
+		display: block;
+		position: absolute;
+		top: 0px;
+		content: "hi";
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 31%, rgba(0,0,0,0.65) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(31%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65)));
+		background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 31%,rgba(0,0,0,0.65) 100%);
+		background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 31%,rgba(0,0,0,0.65) 100%);
+		background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 31%,rgba(0,0,0,0.65) 100%);
+		background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 31%,rgba(0,0,0,0.65) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+
+	}*/
+	.project .projectname
+	{
+		background: white;
+		box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1);
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+		position: absolute;
+		bottom: 0;
+		text-align: right;
+		z-index: 5;
+		width: 100%;
+		line-height: 30px;
+	}
+</style>
