@@ -32,6 +32,7 @@ switch($subview)
 		$stmt = $dbh->prepare("SELECT (project_name) FROM `project`");
 		$stmt->execute();
 		$res = $stmt->get_result();
+        
 		$row = $res->fetch_assoc();
 		$template->SetData("project_name","Hej"/*$row['project_name']*/);
 		#echo $row['project_name'];

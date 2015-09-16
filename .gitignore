@@ -2,3 +2,4 @@
 
 views/*.html.json
 .route
+db_connect.php
