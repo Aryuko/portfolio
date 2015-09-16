@@ -1,5 +1,5 @@
 <?php
-require "alloy/view.php";
+require_once "alloy/view.php";
 include_once "db_connect.php";
 use Alloy\View;
 
