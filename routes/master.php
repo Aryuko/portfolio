@@ -27,18 +27,18 @@ switch($subview)
 		$master->SetAttribute("projectsbutton", "class", "current");
 		$master->SetAttribute("contactbutton", "class", "");
 	
-		$template = View::Get("views/projecttemplate.html");
+		#$template = View::Get("views/projecttemplate.html");
 
-		$stmt = $dbh->prepare("SELECT (project_name) FROM `project`");
-		$stmt->execute();
-		$res = $stmt->get_result();
+		#$stmt = $dbh->prepare("SELECT (project_name) FROM `project`");
+		#$stmt->execute();
+		#$res = $stmt->get_result();
         
-		$row = $res->fetch_assoc();
-		$template->SetData("project_name","Hej"/*$row['project_name']*/);
+		#$row = $res->fetch_assoc();
+		#$template->SetData("project_name","Hej"/*$row['project_name']*/);
 		#echo $row['project_name'];
 	
-		$view->SetAppend("projects",true);		
-		$view->AddData("projects",$template);
+		#$view->SetAppend("projects",true);		
+		#$view->AddData("projects",$template);
 	
 		#$view->
 		break;
